@@ -1,0 +1,244 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px; /* Diubah dari 30px menjadi 20px untuk menambah ruang di semua sisi */
+    color: black;
+    font-size: 11px; /* Sedikit dikecilkan untuk teks umum */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 5px; /* Mengurangi spasi di bawah header */
+    
+}
+
+.logo {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.judul {
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.judul h2 {
+    margin: 0;
+}
+
+.judul p {
+    margin: 1px 0; /* Mengurangi spasi vertikal antar baris alamat */
+    font-size: 12px; /* Dikecilkan dari 14px */
+}
+
+.biro {
+    display: flex;
+    justify-content: space-between;
+    background-color: green;
+    color: white;
+    padding: 8px 15px; /* Mengurangi padding vertikal dari 12px */
+    font-size: 16px; /* Dikecilkan dari 20px */
+    margin: 8px 0; /* Mengurangi spasi di atas dan di bawah kotak biro dari 15px */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-family: 'calibri';
+}
+
+.content {
+    text-align: center;
+}
+
+.content p {
+    margin: 10px 0;
+}
+
+.highlight {
+    background-color: red;
+    color: white;
+    padding: 0 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+.content-box {
+    margin-top: 20px; /* Mengurangi spasi di atas kotak konten dari 40px */
+    text-align: justify;
+    font-family: "Bookman Old Style";
+}
+
+.box-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px; /* Mengurangi spasi vertikal antar baris tabel dari 10px menjadi 5px */
+    font-size: 12px; /* Dikecilkan dari 15px */
+}
+
+.box-table td {
+    vertical-align: top;
+    padding: 2px 0; /* Mengurangi padding vertikal dalam sel tabel */
+    line-height: 1.3; /* Mengurangi spasi antar baris teks dalam sel tabel */
+}
+
+.box-table .label {
+    width: 15%;
+    font-family: "Bookman Old Style";
+}
+
+.box-table .colon {
+    width: 2%;
+}
+
+.box-table .content-left {
+    text-align: justify;
+    font-family: "Bookman Old Style";
+}
+
+.content-box h3 {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.decision-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px; /* Mengurangi spasi vertikal antar baris tabel dari 10px menjadi 5px */
+    font-size: 12px; /* Dikecilkan dari 15px */
+    font-family: "Bookman Old Style";
+}
+
+.decision-table td {
+    vertical-align: top;
+    padding: 2px 0; /* Mengurangi padding vertikal dalam sel tabel */
+    line-height: 1.3;
+}
+
+.signature {
+    margin-top: 20px; /* Mengurangi spasi di atas blok tanda tangan dari 40px */
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px; /* Dikecilkan dari 15px */
+    line-height: 1.5; /* Sedikit mengurangi spasi baris dari 1.7 */
+    font-family: "Bookman Old Style";
+}
+
+.signature p {
+    text-align: left;
+    width: fit-content;
+    margin: 0; /* Hapus margin default pada paragraf dalam signature */
+}
+
+.lamp {
+    max-width: 800px;
+    margin-left: 100px; /* Mengurangi geser seluruh blok ke kanan dari 150px */
+    margin-right: auto;
+    font-family: "Californian FB";
+    text-align: justify;
+    font-size: 11px; /* Dikecilkan untuk teks lampiran */
+    line-height: 1.2;
+}
+
+.centered {
+    text-align: center;
+    font-family: "Bookman Old Style";
+    margin-top: -15px;
+}
+
+ol {
+    font-size: 12px; /* Dikecilkan dari 15px */
+    padding-left: 15px; /* Sedikit mengurangi padding kiri untuk daftar dari 20px */
+    margin-top: 5px; /* Mengurangi spasi di atas daftar dari 10px */
+    line-height: 1.3; /* Mengurangi spasi baris */
+}
+
+h4 {
+    margin-bottom: 5px; /* Mengurangi spasi di bawah judul h4 dari 10px */
+    margin-top: 10px; /* Sesuaikan spasi di atas judul h4 */
+    font-size: 14px; /* Sesuaikan ukuran font jika perlu */
+}
+
+.lampiran {
+    background-color: red;
+    color: black;
+    display: inline;
+    padding: 0 3px;
+}
+
+.section {
+    margin-top: 10px;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+}
+
+.judul-daftar {
+    text-align: center;
+    font-weight: bold;
+    font-size: 10pt; /* Dikecilkan dari 12pt */
+    margin-top: 10px; /* Mengurangi spasi di atas judul daftar dari 20px */
+    margin-bottom: 5px;
+}
+
+.tabel-dosen {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 9pt; /* **Sangat penting**: Dikecilkan signifikan dari 12pt */
+}
+
+.tabel-dosen th,
+.tabel-dosen td {
+    border: 1px solid black;
+    padding: 3px; /* Mengurangi padding di dalam sel tabel dari 6px */
+    vertical-align: top;
+    line-height: 1.1; /* Mengurangi spasi baris dalam sel tabel */
+}
+
+.tabel-dosen th {
+    background-color: #a5d65c;
+    text-align: center;
+    font-weight: bold;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.page-break {
+    page-break-before: always; /* Untuk cetak */
+    break-before: page;/* Untuk browser modern */
+}
+
+/* draft Perubahan */
+.h_KPR {
+    text-align: center;
+    font-family: "Bookman Old Style";
+    font-size: 16px; /* Dikecilkan dari 16px */
+}

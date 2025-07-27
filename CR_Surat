@@ -1,0 +1,191 @@
+<?php
+// Ambil nama dosen yang dicentang dari halaman sebelumnya
+$dosen_terpilih = isset($_POST['dosen']) ? $_POST['dosen'] : [];
+
+// Cek jika tidak ada dosen yang dipilih
+if (empty($dosen_terpilih)) {
+    echo '<p class="text-danger text-center">Tidak ada dosen yang dipilih.</p>';
+    echo '<a href="process_additional_data.php" class="btn btn-secondary mt-3">Kembali</a>';
+    exit;
+}
+
+// Tanggal hari ini
+$tanggal_surat = date('d F Y');
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kop Surat UNISSULA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .kop-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            width: 100px; /* Sesuaikan ukuran logo */
+            margin-right: 15px;
+        }
+        .text-container {
+            flex-grow: 1;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 3px 0;
+        }
+        .subtitle {
+            font-size: 14px;
+            margin: 3px 0;
+        }
+        .contact {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .contact a {
+            color: blue;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .print-button {
+            margin: 20px auto;
+            text-align: center;
+        }
+        @media print {
+            .print-button {
+                display: none; /* Sembunyikan tombol saat mencetak */
+            }
+            .footer {
+                background-color: green !important; /* Pastikan warna hijau terlihat saat dicetak */
+                -webkit-print-color-adjust: exact; /* Memastikan warna dicetak pada browser berbasis WebKit */
+                print-color-adjust: exact; /* Memastikan warna dicetak di Firefox */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kop-container">
+        <div class="header">
+            <img src="logo.png" alt="Logo UNISSULA" class="logo">
+            <div class="text-container">
+                <div class="title">UNIVERSITAS ISLAM SULTAN AGUNG</div>
+                <div class="title">UNISSULA</div>
+                <div class="subtitle">Jl. Kaligawe Raya No.KM. 4, Terboyo Kulon, Genuk, Kota Semarang, Jawa Tengah 50112</div>
+                <div class="contact">
+                    <a href="mailto:informasi@unissula.ac.id">informasi@unissula.ac.id</a> |
+                    <a href="https://www.unissula.ac.id" target="_blank">www.unissula.ac.id</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Biro Rektor</strong>
+            <span>Bismillah Membangun Generasi Khairaummah</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="title">
+            <h3>KEPUTUSAN REKTOR UNIVERSITAS ISLAM SULTAN AGUNG</h3>
+            <p>Nomor: 10169/A.1/SA/X/2024</p>
+            <p><strong>TENTANG:</strong></p>
+            <p>PENGANGKATAN DOSEN PENGAMPU MATA KULIAH / PENGAJAR MODUL</p>
+            <p>PROGRAM STUDI SARJANA KEDOKTERAN GIGI FAKULTAS KEDOKTERAN GIGI</p>
+            <p>SEMESTER GASAL TAHUN AKADEMIK 2024/2025</p>
+        </div>
+
+        <div class="body-text">
+            <p><strong>BISMILLAHIRRAHMANIRRAHIM</strong></p>
+            <p>REKTOR UNIVERSITAS ISLAM SULTAN AGUNG</p>
+            <table>
+                <tr>
+                    <th>Dasar Pertimbangan</th>
+                    <th>Keterangan</th>
+                </tr>
+                <tr>
+                    <td>Menimbang</td>
+                    <td>a. Untuk memperlancar proses belajar mengajar...<br>b. Bahwa mereka yang namanya tercantum...</td>
+                </tr>
+                <tr>
+                    <td>Mengingat</td>
+                    <td>1. Undang-Undang Nomor 20 tahun 2003...</td>
+                </tr>
+            </table>
+	<table class="table table-bordered mt-4">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Dosen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($dosen_terpilih as $index => $nama): ?>
+                            <tr>
+                                <td><?= $index + 1 ?></td>
+                                <td><?= htmlspecialchars($nama) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+<p>
+                    Keputusan ini mulai berlaku sejak tanggal <?= htmlspecialchars($tanggal_surat) ?> hingga keputusan lain yang menggantikannya.
+                </p>
+                <p class="text-end">
+                    <strong>Ditetapkan di Semarang,</strong><br>
+                    Pada tanggal <?= htmlspecialchars($tanggal_surat) ?><br>
+                    <br><br>
+                    <strong>Rektor,</strong><br>
+                    Prof. Dr. H. Gunarto., S.H., M.H.
+                </p>
+
+        </div>
+    </div>
+
+    <div class="print-button">
+        <button onclick="printDocument()">Cetak Dokumen</button>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
